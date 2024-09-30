@@ -23,9 +23,10 @@ class CustomTextFormField extends StatelessWidget {
     this.onChanged,
     this.colorCrsor,
     this.maxLines = 1,
-    this.expands = false,
+   this.expands = false,
     this.contentPadding,
     this.errorBorder,
+    this.label,
   });
 
   final TextEditingController? controller;
@@ -46,6 +47,7 @@ class CustomTextFormField extends StatelessWidget {
   final Color? colorCrsor;
   final int? maxLines;
   final bool expands;
+  final Widget? label;
   final EdgeInsetsGeometry? contentPadding;
   final void Function(String)? onChanged;
 
@@ -64,17 +66,23 @@ class CustomTextFormField extends StatelessWidget {
           color: AppColors.black,
         ),
 
-        textDirection: TextDirection.rtl,
+        //textDirection: TextDirection.rtl,
         onChanged: onChanged,
         maxLines: maxLines,
         expands: expands,
 
         decoration: InputDecoration(
+          label: label,
+          labelText: labelText,
+
+          labelStyle: const TextStyle(
+            color: AppColors.grey,
+            fontSize: 20
+          ),
           contentPadding: contentPadding,
           hintText: hintText,
-          labelText: labelText,
           hintStyle: const TextStyle(
-            color: AppColors.black
+            color: AppColors.grey
           ),
 
           border: border,
@@ -90,7 +98,7 @@ class CustomTextFormField extends StatelessWidget {
             onPressed: suffixIconOnPressed,
             icon: Icon(
               iconSuffix,
-              color: AppColors.black,
+              color: AppColors.greyVeryLite,
             ),
           ),
         ),
