@@ -19,29 +19,63 @@ class RememberAndForgetPassword extends StatelessWidget {
       child: BlocBuilder<AuthCubit, AuthState>(
         builder: (context, state) {
           final cubit = BlocProvider.of<AuthCubit>(context);
+          final width = MediaQuery.of(context).size.width;
 
-          return Row(
-            children: [
-              IconButton(
-                icon: Icon(cubit.rememberIcon),
-                onPressed: () {
-                  cubit.changeRememberIcon();
-                },
-              ),
-              horizontalSpace(5),
-              Text(
-                AppStrings.rememberMe.tr(context),
-                style: TextStyles.font14BlackMedium,
-              ),
-              const Spacer(),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  AppStrings.forgetPassword.tr(context),
-                  style: TextStyles.font14GreenMedium,
-                ),
-              ),
-            ],
+          return LayoutBuilder(
+            builder: (context, constraints) {
+              if (width < 500) {
+                return Row(
+                  children: [
+                    IconButton(
+                      icon: Icon(cubit.rememberIcon),
+                      onPressed: () {
+                        cubit.changeRememberIcon();
+                      },
+                    ),
+                    horizontalSpace(5),
+                    Text(
+                      AppStrings.rememberMe.tr(context),
+                      style: TextStyles.font14BlackMedium,
+                    ),
+                    const Spacer(),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        AppStrings.forgetPassword.tr(context),
+                        style: TextStyles.font14GreenMedium,
+                      ),
+                    ),
+                  ],
+                );
+              } else {
+                return SizedBox(
+                  width: 500.w,
+                  child: Row(
+                    children: [
+                      IconButton(
+                        icon: Icon(cubit.rememberIcon),
+                        onPressed: () {
+                          cubit.changeRememberIcon();
+                        },
+                      ),
+                      horizontalSpace(5),
+                      Text(
+                        AppStrings.rememberMe.tr(context),
+                        style: TextStyles.font14BlackMedium,
+                      ),
+                      const Spacer(),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          AppStrings.forgetPassword.tr(context),
+                          style: TextStyles.font14GreenMedium,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }
+            },
           );
         },
       ),

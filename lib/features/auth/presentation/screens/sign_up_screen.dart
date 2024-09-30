@@ -20,7 +20,7 @@ class SignUpScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              verticalSpace(70),
+              verticalSpace(50),
               // App Logo
               Image.asset(
                 AppAssets.appLogo,

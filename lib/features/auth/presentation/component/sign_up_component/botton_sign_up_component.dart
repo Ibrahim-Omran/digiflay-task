@@ -37,24 +37,53 @@ class ButtonSignUpComponent extends StatelessWidget {
         },
         builder: (context, state) {
           final cubit = BlocProvider.of<AuthCubit>(context);
-          return Column(
-            children: [
-              // SignUp Button and Loading
-              state is SignUpLoadingState
-                  ? const Center(
-                      child: CircularProgressIndicator(
-                      color: AppColors.primary,
-                    ))
-                  : CustomButton(
-                      onPressed: () {
-                        if (cubit.formKeySignUp.currentState!.validate()) {
-                          cubit.signUp(context);
+          final width = MediaQuery.of(context).size.width;
 
-                        }
-                      },
-                      title: AppStrings.signUp,
-                    ),
-            ],
+          return LayoutBuilder(
+            builder: (context, constraints) {
+              if (width < 500) {
+                return Column(
+                  children: [
+                    // SignUp Button and Loading
+                    state is SignUpLoadingState
+                        ? const Center(
+                            child: CircularProgressIndicator(
+                            color: AppColors.primary,
+                          ))
+                        : CustomButton(
+                            onPressed: () {
+                              if (cubit.formKeySignUp.currentState!
+                                  .validate()) {
+                                cubit.signUp(context);
+                              }
+                            },
+                            title: AppStrings.signUp,
+                          ),
+                  ],
+                );
+              } else {
+                return Column(
+                  children: [
+                    // SignUp Button and Loading
+                    state is SignUpLoadingState
+                        ? const Center(
+                            child: CircularProgressIndicator(
+                            color: AppColors.primary,
+                          ))
+                        : CustomButton(
+                            width: 500.w,
+                            onPressed: () {
+                              if (cubit.formKeySignUp.currentState!
+                                  .validate()) {
+                                cubit.signUp(context);
+                              }
+                            },
+                            title: AppStrings.signUp,
+                          ),
+                  ],
+                );
+              }
+            },
           );
         },
       ),

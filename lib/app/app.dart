@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -20,9 +21,13 @@ class DigiFlayApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
+
       minTextAdapt: true,
       builder: (context,state) {
         return MaterialApp(
+          useInheritedMediaQuery: true,
+          //locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
               debugShowCheckedModeBanner: false,
           localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
@@ -35,7 +40,7 @@ class DigiFlayApp extends StatelessWidget {
             Locale('en',"US"),
           ],
          // locale: Locale(BlocProvider.of<GlobalCubit>(context).langCode),
-          locale: Locale('en'),
+          locale: Locale('ar'),
               title: AppStrings.digiFlayApp,
               theme: getAppTheme(),
               initialRoute: Routes.intitlRoute,
