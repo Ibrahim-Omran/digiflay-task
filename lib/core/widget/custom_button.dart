@@ -40,23 +40,9 @@ class CustomButton extends StatelessWidget {
         child: Center(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    title.tr(context),
-                    style: TextStyles.font16bWhiteBold,
-                  ),
-
-                  icon == null ?
-                  Icon(
-                      icon,
-                    size: 30.sp,
-                    color: AppColors.white,
-                  ) : const SizedBox(),
-
-                ],
+              child: Text(
+                title.tr(context),
+                style: TextStyles.font16bWhiteBold,
               ),
             )),
       ),

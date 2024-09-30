@@ -1,5 +1,7 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:digiflay_task/app/app.dart';
 import 'package:digiflay_task/core/routes/app_routes.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,7 +19,11 @@ void main() async {
   runApp(
       BlocProvider(
         create: (context) =>sl<GlobalCubit>()..getCachedLang(),
-        child: DigiFlayApp(appRouter: AppRoutes()),
+       child:  DevicePreview(
+         enabled: !kReleaseMode,
+         builder: (context) => DigiFlayApp(appRouter: AppRoutes()), // Wrap your app
+       ),
+       // child: DigiFlayApp(appRouter: AppRoutes()),
       ));
 }
 
