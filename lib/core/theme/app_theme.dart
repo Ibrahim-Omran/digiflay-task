@@ -39,33 +39,30 @@ ThemeData getAppTheme() {
       ),
 
       //enabled Border
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: const BorderSide(
-          color: AppColors.greyLite,
+      enabledBorder: const UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: AppColors.greyVeryLite,
         ),
       ),
 
       //focused Border
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: const BorderSide(
-          color: AppColors.greyLite,
+      focusedBorder: const UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: AppColors.greyVeryLite,
         ),
       ),
 
       //error Border
-      errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: const BorderSide(
-         color: AppColors.greyLite,
+      errorBorder: const UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: AppColors.red,
         ),
       ),
 
       //hint text
       hintStyle: boldStyle(color: AppColors.grey, fontSize: 16),
 
-      filled: true,
+      filled: false,
       fillColor: AppColors.greyLite,
     ),
 

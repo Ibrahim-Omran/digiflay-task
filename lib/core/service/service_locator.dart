@@ -1,5 +1,7 @@
 
 import 'package:digiflay_task/core/database/bloc/global_cubit.dart';
+import 'package:digiflay_task/features/auth/data/repository/auth_repository.dart';
+import 'package:digiflay_task/features/auth/presentation/cubits/auth_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -14,10 +16,12 @@ void initServiceLocator(){
 
   // cubits
   sl.registerFactory(()=>GlobalCubit());
+  sl.registerFactory(()=>AuthCubit(sl()));
 
 
-  // product feature
-  // sl.registerLazySingleton(() => ProductRepository());
+  //auth feature
+  sl.registerLazySingleton(() => AuthRepository());
+
 
   // external
   sl.registerLazySingleton(()=>CacheHelper());
