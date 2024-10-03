@@ -16,15 +16,13 @@ void main() async {
   initServiceLocator();
   await sl<CacheHelper>().init();
 
-  runApp(
-      BlocProvider(
-        create: (context) =>sl<GlobalCubit>()..getCachedLang(),
-       child:  DevicePreview(
-         enabled: !kReleaseMode,
-         builder: (context) => DigiFlayApp(appRouter: AppRoutes()), // Wrap your app
-       ),
-       // child: DigiFlayApp(appRouter: AppRoutes()),
-      ));
+  runApp(BlocProvider(
+    create: (context) => sl<GlobalCubit>()..getCachedLang(),
+    child: DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) =>
+          DigiFlayApp(appRouter: AppRoutes()), // Wrap your app
+    ),
+    // child: DigiFlayApp(appRouter: AppRoutes()),
+  ));
 }
-
-

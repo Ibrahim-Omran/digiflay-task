@@ -2,6 +2,8 @@ class EndPoint {
   static const String baseUrl = 'https://api.escuelajs.co/api/v1/';
   static const String login = '/auth/login';
   static const String signUp = 'users/';
+  static const String currentUser = 'auth/profile';
+  static const String products = 'products';
 
   //
   // static String getChefDataEndPoint(id) {
@@ -35,6 +37,7 @@ class ApiKeys {
   static const String description = 'description';
   static const String price = 'price';
   static const String category = 'category';
+  static const String authorization = 'Authorization';
   static const String role = 'role';
   static const String avatar = 'avatar';
 

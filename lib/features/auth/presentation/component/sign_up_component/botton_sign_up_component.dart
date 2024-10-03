@@ -33,6 +33,7 @@ class ButtonSignUpComponent extends StatelessWidget {
               message: AppStrings.signUpSuccessfully.tr(context),
               state: ToastState.success,
             );
+            context.pop();
           }
         },
         builder: (context, state) {
@@ -54,7 +55,7 @@ class ButtonSignUpComponent extends StatelessWidget {
                             onPressed: () {
                               if (cubit.formKeySignUp.currentState!
                                   .validate()) {
-                                cubit.signUp(context);
+                                cubit.signUp();
                               }
                             },
                             title: AppStrings.signUp,
@@ -75,7 +76,7 @@ class ButtonSignUpComponent extends StatelessWidget {
                             onPressed: () {
                               if (cubit.formKeySignUp.currentState!
                                   .validate()) {
-                                cubit.signUp(context);
+                                cubit.signUp();
                               }
                             },
                             title: AppStrings.signUp,
