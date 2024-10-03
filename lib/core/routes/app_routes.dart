@@ -2,6 +2,7 @@ import 'package:digiflay_task/core/service/service_locator.dart';
 import 'package:digiflay_task/features/auth/presentation/cubits/auth_cubit.dart';
 import 'package:digiflay_task/features/auth/presentation/screens/login_screen.dart';
 import 'package:digiflay_task/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:digiflay_task/features/editor/presentation/screens/text_editor_screen.dart';
 import 'package:digiflay_task/features/home/presentation/cubits/home_cubit.dart';
 import 'package:digiflay_task/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class Routes {
   static const String intitlRoute = '/';
   static const String signUp = '/signUp';
   static const String home = '/home';
+  static const String textEditor = '/textEditor';
 
 
 }
@@ -42,6 +44,10 @@ class AppRoutes {
               create: (context) => sl<HomeCubit>()..getProducts(),
               child: const HomeScreen(),
             ));
+
+      case Routes.textEditor:
+        return BaseRoute(
+            page:  TextEditorScreen());
 
 
 

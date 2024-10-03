@@ -23,11 +23,17 @@ class AppStrings {
 
   static const String home = 'home';
   static const String setting = 'setting';
-  static const String textEditor = 'text_editor';
   static const String viewAll = 'view_all';
   static const String bestSeller = 'best_seller';
   static const String searchHere = 'search_here';
   static const String welcome = 'welcome';
+
+  // Text Editor Feature
+  static const String introduceYourSelf = 'introduce_your_self';
+  static const String textEditor = 'text_editor';
+
+
+
 
 
 }

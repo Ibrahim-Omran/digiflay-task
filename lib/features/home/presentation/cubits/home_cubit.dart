@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:digiflay_task/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:digiflay_task/features/editor/presentation/screens/text_editor_screen.dart';
 import 'package:digiflay_task/features/home/data/models/product_model.dart';
 import 'package:digiflay_task/features/home/data/repository/product_repository.dart';
 import 'package:digiflay_task/features/home/presentation/screens/home_body_screen.dart';
@@ -16,7 +17,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   List<Widget> screens = [
      const HomeBodyScreen(),
-     const SignUpScreen(),
+      TextEditorScreen(),
   ];
   int currentIndex = 0;
 
