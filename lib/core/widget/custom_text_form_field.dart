@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/app_colors.dart';
 
 
@@ -26,7 +27,7 @@ class CustomTextFormField extends StatelessWidget {
    this.expands = false,
     this.contentPadding,
     this.errorBorder,
-    this.label,
+    this.label, this.icon, this.prefixIcon, this.suffixIcon,
   });
 
   final TextEditingController? controller;
@@ -48,6 +49,9 @@ class CustomTextFormField extends StatelessWidget {
   final int? maxLines;
   final bool expands;
   final Widget? label;
+  final Widget? icon;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final EdgeInsetsGeometry? contentPadding;
   final void Function(String)? onChanged;
 
@@ -66,12 +70,16 @@ class CustomTextFormField extends StatelessWidget {
           color: AppColors.black,
         ),
 
+
         //textDirection: TextDirection.rtl,
         onChanged: onChanged,
         maxLines: maxLines,
         expands: expands,
 
+
+
         decoration: InputDecoration(
+          prefixIcon: prefixIcon,
           label: label,
           labelText: labelText,
 
@@ -80,6 +88,7 @@ class CustomTextFormField extends StatelessWidget {
             fontSize: 20
           ),
           contentPadding: contentPadding,
+          icon: icon,
           hintText: hintText,
           hintStyle: const TextStyle(
             color: AppColors.grey
@@ -94,13 +103,21 @@ class CustomTextFormField extends StatelessWidget {
           errorBorder: errorBorder,
 
 
-          suffixIcon: IconButton(
+          suffixIconConstraints: BoxConstraints(
+            minHeight: 60.h
+          ),
+
+          suffixIcon: suffixIcon ?? IconButton(
             onPressed: suffixIconOnPressed,
             icon: Icon(
               iconSuffix,
               color: AppColors.greyVeryLite,
             ),
           ),
+
+
+
+
         ),
       );
   }

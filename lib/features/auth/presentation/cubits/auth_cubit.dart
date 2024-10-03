@@ -50,6 +50,7 @@ class AuthCubit extends Cubit<AuthState> {
           key: ApiKeys.accessToken,
           value: r.accessToken,
         );
+
         emit(LoginSuccessState());
       },
     );
@@ -58,7 +59,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   // SignUp...
   SignUpModel? signUpModel;
-  void signUp(context) async {
+  void signUp() async {
     emit(SignUpLoadingState());
     final result = await authRepo.signUp(
       name: nameController.text,
@@ -69,7 +70,6 @@ class AuthCubit extends Cubit<AuthState> {
           (l) => emit(SignUpErrorState(l)),
           (r) async {
             signUpModel = r;
-            Navigator.pop(context);
         emit(SignUpSuccessState());
       },
     );

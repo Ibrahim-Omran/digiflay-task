@@ -19,6 +19,15 @@ class AppStrings {
   static const String alreadyHaveAccount = 'already_have_an_account';
   static const String signUpSuccessfully = 'signUpSuccessfully';
 
+  // Home Feature
+
+  static const String home = 'home';
+  static const String setting = 'setting';
+  static const String textEditor = 'text_editor';
+  static const String viewAll = 'view_all';
+  static const String bestSeller = 'best_seller';
+  static const String searchHere = 'search_here';
+  static const String welcome = 'welcome';
 
 
 }
