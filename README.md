@@ -65,6 +65,12 @@
 ![photo_2024-10-04_18-00-46](https://github.com/user-attachments/assets/d3db5bb1-03bb-4fc8-a269-09a77dfc6e55)
 
 
+## 🎥 Video
+
+
+https://github.com/user-attachments/assets/11c0cf9b-3848-4b7d-bf6b-c7a41e59acbb
+
+
 
 
 
