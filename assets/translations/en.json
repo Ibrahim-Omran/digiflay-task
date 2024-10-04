@@ -29,8 +29,10 @@
     "introduce_your_self": "Introduce your self",
     "profile": "Profile",
     "Languages": "Languages",
+    "contact_us": "Contact us",
     "call_us": "Call us",
     "about_us": "About us",
     "sign_out": "Sign out",
-    "edit_Account": "Edit Account"
+    "edit_Account": "Edit Account",
+    "Save": "Save"
 }

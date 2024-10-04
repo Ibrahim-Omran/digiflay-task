@@ -5,6 +5,8 @@ import 'package:digiflay_task/features/auth/presentation/screens/sign_up_screen.
 import 'package:digiflay_task/features/editor/presentation/screens/text_editor_screen.dart';
 import 'package:digiflay_task/features/home/presentation/cubits/home_cubit.dart';
 import 'package:digiflay_task/features/home/presentation/screens/home_screen.dart';
+import 'package:digiflay_task/features/setting/presentation/screens/edit_profile_screen.dart';
+import 'package:digiflay_task/features/setting/presentation/screens/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'base_routes.dart';
@@ -15,6 +17,8 @@ class Routes {
   static const String signUp = '/signUp';
   static const String home = '/home';
   static const String textEditor = '/textEditor';
+  static const String setting = '/setting';
+  static const String editProfile = '/editProfile';
 
 
 }
@@ -23,7 +27,6 @@ class AppRoutes {
   Route generateRouter(RouteSettings routeSettings) {
     final arguments = routeSettings.arguments;
     switch (routeSettings.name) {
-
       case Routes.intitlRoute:
         return BaseRoute(
             page: BlocProvider(
@@ -41,15 +44,23 @@ class AppRoutes {
       case Routes.home:
         return BaseRoute(
             page: BlocProvider(
-              create: (context) => sl<HomeCubit>()..getProducts(),
+              create: (context) =>
+              sl<HomeCubit>()
+                ..getProducts(),
               child: const HomeScreen(),
             ));
 
       case Routes.textEditor:
         return BaseRoute(
-            page:  TextEditorScreen());
+            page: const TextEditorScreen());
 
+      case Routes.setting:
+        return BaseRoute(
+            page: const SettingScreen());
 
+      case Routes.editProfile:
+        return BaseRoute(
+            page: const EditProfileScreen());
 
 
       default:

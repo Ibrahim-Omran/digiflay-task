@@ -20,9 +20,7 @@ class AppStrings {
   static const String signUpSuccessfully = 'signUpSuccessfully';
 
   // Home Feature
-
   static const String home = 'home';
-  static const String setting = 'setting';
   static const String viewAll = 'view_all';
   static const String bestSeller = 'best_seller';
   static const String searchHere = 'search_here';
@@ -32,6 +30,21 @@ class AppStrings {
   static const String introduceYourSelf = 'introduce_your_self';
   static const String textEditor = 'text_editor';
 
+  // Setting Feature
+  static const String setting = 'setting';
+  static const String profile = 'profile';
+  static const String languages = 'Languages';
+  static const String callUs = 'call_us';
+  static const String aboutUs = 'about_us';
+  static const String signOut = 'sign_out';
+  static const String editAccount = 'edit_Account';
+  static const String save = 'Save';
+  static const String contactUs = 'contact_us';
+
+
+  static const String nameKey = 'nameKey';
+  static const String emailKey = 'emailKey';
+  static const String idKey = 'idKey';
 
 
 

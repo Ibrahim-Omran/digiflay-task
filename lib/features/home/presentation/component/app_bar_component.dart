@@ -1,6 +1,8 @@
 
+import 'package:digiflay_task/core/database/cache/cache_helper.dart';
 import 'package:digiflay_task/core/helper/spacing.dart';
 import 'package:digiflay_task/core/locale/app_locale.dart';
+import 'package:digiflay_task/core/service/service_locator.dart';
 import 'package:digiflay_task/core/theme/styles.dart';
 import 'package:digiflay_task/core/utils/app_assets.dart';
 import 'package:digiflay_task/core/utils/app_strings.dart';
@@ -23,9 +25,11 @@ class AppBarComponent extends StatelessWidget {
           ),
           horizontalSpace(8),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                'Ahmed Ali',
+                sl<CacheHelper>().getData(key: AppStrings.nameKey),
                 style: TextStyles.font14BlackBold,
               ),
               verticalSpace(4),
