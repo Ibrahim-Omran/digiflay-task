@@ -75,6 +75,24 @@ class DioConsumer extends ApiConsumer {
   }
 
   @override
+  Future put(
+      String path, {
+        Object? data,
+        Map<String, dynamic>? queryParameters,
+      }) async {
+    try {
+      var res = await dio.put(
+        path,
+        data: data,
+        queryParameters: queryParameters,
+      );
+      return res.data;
+    } on DioException catch (e) {
+      handleDioException(e);
+    }
+  }
+
+  @override
   Future post(
     String path, {
     dynamic data,

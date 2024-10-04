@@ -1,3 +1,4 @@
+
 class EndPoint {
   static const String baseUrl = 'https://api.escuelajs.co/api/v1/';
   static const String login = '/auth/login';
@@ -5,24 +6,8 @@ class EndPoint {
   static const String currentUser = 'auth/profile';
   static const String products = 'products';
 
-  //
-  // static String getChefDataEndPoint(id) {
-  //   return '$chefGet$id';
-  // }
-  //
-  // static String getUpdateMealEndPoint(id) {
-  //   return '$updateMeal$id';
-  // }
-  //
-  // static String getDeleteMealEndPoint(id) {
-  //   return '$deleteMeal$id';
-  // }
-  //
-  // static String getAllChefsMeals(id) {
-  //   return 'chef/get-chef/$id/meals';
-  // }
+
 }
-// /chef/get-chef/653940754fdeafb89abdc0ce/meals
 
 class ApiKeys {
   static const String id = 'id';

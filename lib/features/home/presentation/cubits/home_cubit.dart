@@ -4,6 +4,7 @@ import 'package:digiflay_task/features/editor/presentation/screens/text_editor_s
 import 'package:digiflay_task/features/home/data/models/product_model.dart';
 import 'package:digiflay_task/features/home/data/repository/product_repository.dart';
 import 'package:digiflay_task/features/home/presentation/screens/home_body_screen.dart';
+import 'package:digiflay_task/features/setting/presentation/screens/setting_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:meta/meta.dart';
 
@@ -17,7 +18,8 @@ class HomeCubit extends Cubit<HomeState> {
 
   List<Widget> screens = [
      const HomeBodyScreen(),
-      TextEditorScreen(),
+      const TextEditorScreen(),
+    const SettingScreen(),
   ];
   int currentIndex = 0;
 

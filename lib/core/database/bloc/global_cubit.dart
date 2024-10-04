@@ -13,7 +13,7 @@ class GlobalCubit extends Cubit<GlobalState> {
   //bool isArabic = false ;
   String langCode = 'en';
   void changeLang(String codeLang)async{
-  emit(ChangeLangLoading());
+  //emit(ChangeLangLoading());
   //isArabic = !isArabic;
   langCode = codeLang;
   await sl<CacheHelper>().cacheLanguage(codeLang);

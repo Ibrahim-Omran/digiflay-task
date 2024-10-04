@@ -41,9 +41,9 @@ class ButtonsComponent extends StatelessWidget {
         },
         builder: (context, state) {
           final cubit = BlocProvider.of<AuthCubit>(context);
-          final width = MediaQuery.of(context).size.width;
           return LayoutBuilder(
             builder: (context, constraints) {
+              final width = MediaQuery.of(context).size.width;
               return Column(
                 children: [
                   // Login Button and Loading

@@ -29,8 +29,11 @@
     "introduce_your_self": "قدم نفسك",
     "profile": "الملف الشخصي",
     "Languages": "الللغات",
+    "contact_us": "تواصل معنا",
     "call_us": "اتصل بنا",
     "about_us": "من نحن",
     "sign_out": "تسجيل الخروج",
-    "edit_Account": "المعلومات الأساسية"
+    "edit_Account": "المعلومات الأساسية",
+    "Save": "حفظ"
+
 }

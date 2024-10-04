@@ -27,6 +27,13 @@ class TextStyles {
     fontFamily: 'Cairo',
   );
 
+  static TextStyle font16GrayBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: AppColors.grey,
+    fontFamily: 'Cairo',
+  );
+
   static TextStyle font14BlackMedium = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.medium,

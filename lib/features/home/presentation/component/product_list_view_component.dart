@@ -32,7 +32,7 @@ class ProductListViewComponent extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return ProductComponent(
                           width: width,
-                          imageProduct: cubit.products[index].images[1],
+                          imageProduct: cubit.products[index].category.image,
                           nameProduct: cubit.products[index].title,
                           subTitleProduct: cubit.products[index].description,
                           priceProduct: cubit.products[index].price.toString(),

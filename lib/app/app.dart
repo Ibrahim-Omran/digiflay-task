@@ -24,30 +24,36 @@ class DigiFlayApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       builder: (context, state) {
-        return MaterialApp(
-          useInheritedMediaQuery: true,
-          //locale: DevicePreview.locale(context),
-          builder: DevicePreview.appBuilder,
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: const [
-            GlobalMaterialLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            AppLocalizations.delegate,
-          ],
-          supportedLocales: const [
-            Locale('ar', "EG"),
-            Locale('en', "US"),
-          ],
-          // locale: Locale(BlocProvider.of<GlobalCubit>(context).langCode),
-          locale: Locale('en'),
-          title: AppStrings.digiFlayApp,
-          theme: getAppTheme(),
-          initialRoute:
+        return BlocBuilder<GlobalCubit, GlobalState>(
+          builder: (context, state) {
+            return MaterialApp(
+              useInheritedMediaQuery: true,
+              //locale: DevicePreview.locale(context),
+              builder: DevicePreview.appBuilder,
+              debugShowCheckedModeBanner: false,
+              localizationsDelegates: const [
+                GlobalMaterialLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                AppLocalizations.delegate,
+              ],
+              supportedLocales: const [
+                Locale('ar', "EG"),
+                Locale('en', "US"),
+              ],
+              locale: Locale(BlocProvider
+                  .of<GlobalCubit>(context)
+                  .langCode),
+              //locale: Locale('en'),
+              title: AppStrings.digiFlayApp,
+              theme: getAppTheme(),
+              initialRoute:
               sl<CacheHelper>().getData(key: ApiKeys.accessToken) == null
                   ? Routes.intitlRoute
                   : Routes.home,
-          onGenerateRoute: appRouter.generateRouter,
+              onGenerateRoute: appRouter.generateRouter,
+            );
+          },
         );
       },
     );

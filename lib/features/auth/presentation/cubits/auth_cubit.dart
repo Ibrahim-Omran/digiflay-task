@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:digiflay_task/core/database/api/end_points.dart';
 import 'package:digiflay_task/core/database/cache/cache_helper.dart';
 import 'package:digiflay_task/core/service/service_locator.dart';
+import 'package:digiflay_task/core/utils/app_strings.dart';
 import 'package:digiflay_task/features/auth/data/models/login_model.dart';
 import 'package:digiflay_task/features/auth/data/models/sign_up_model.dart';
 import 'package:digiflay_task/features/auth/data/repository/auth_repository.dart';
@@ -26,10 +27,9 @@ class AuthCubit extends Cubit<AuthState> {
   final formKeyLogin = GlobalKey<FormState>();
   final formKeySignUp = GlobalKey<FormState>();
 
-
-
   //login method
   LoginModel? loginModel;
+
   void login() async {
     emit(LoginLoadingState());
     final result = await authRepo.login(
@@ -56,9 +56,9 @@ class AuthCubit extends Cubit<AuthState> {
     );
   }
 
-
   // SignUp...
   SignUpModel? signUpModel;
+
   void signUp() async {
     emit(SignUpLoadingState());
     final result = await authRepo.signUp(
@@ -67,15 +67,28 @@ class AuthCubit extends Cubit<AuthState> {
       password: passwordController.text,
     );
     result.fold(
-          (l) => emit(SignUpErrorState(l)),
-          (r) async {
-            signUpModel = r;
+      (l) => emit(SignUpErrorState(l)),
+      (r) async {
+        signUpModel = r;
+
+        // Save email and name to show in home screen and setting screen
+        sl<CacheHelper>().saveData(
+          key: AppStrings.nameKey,
+          value: signUpModel!.name,
+        );
+        sl<CacheHelper>().saveData(
+          key: AppStrings.emailKey,
+          value: signUpModel!.email,
+        );
+        sl<CacheHelper>().saveData(
+          key: AppStrings.idKey,
+          value: signUpModel!.id,
+        );
+
         emit(SignUpSuccessState());
       },
     );
   }
-
-
 
   bool isLoginPasswordSowing = true;
   IconData suffixIcon = Icons.visibility;
@@ -83,7 +96,7 @@ class AuthCubit extends Cubit<AuthState> {
   void changeLoginPasswordSuffixIcon() {
     isLoginPasswordSowing = !isLoginPasswordSowing;
     suffixIcon =
-    isLoginPasswordSowing ? Icons.visibility : Icons.visibility_off;
+        isLoginPasswordSowing ? Icons.visibility : Icons.visibility_off;
 
     emit(ChangeLoginPasswordSuffixIcon());
   }
@@ -94,8 +107,7 @@ class AuthCubit extends Cubit<AuthState> {
   void changeRememberIcon() {
     isRememberSowing = !isRememberSowing;
     rememberIcon =
-    isRememberSowing ? Icons.check_box_outline_blank : Icons.check_box;
+        isRememberSowing ? Icons.check_box_outline_blank : Icons.check_box;
     emit(ChangeRememberIcon());
   }
-
 }
