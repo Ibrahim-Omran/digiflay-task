@@ -18,11 +18,6 @@ void main() async {
 
   runApp(BlocProvider(
     create: (context) => sl<GlobalCubit>()..getCachedLang(),
-    child: DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) =>
-          DigiFlayApp(appRouter: AppRoutes()), // Wrap your app
-    ),
-    // child: DigiFlayApp(appRouter: AppRoutes()),
+    child: DigiFlayApp(appRouter: AppRoutes(),),
   ));
 }

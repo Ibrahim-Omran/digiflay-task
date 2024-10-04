@@ -42,7 +42,6 @@ dependencies:
   dio: ^5.7.0
   dartz: ^0.10.1
   get_it: ^7.6.4
-  animate_do: ^3.3.2
   shared_preferences: ^2.2.1
   fluttertoast:
   shimmer: ^3.0.0
