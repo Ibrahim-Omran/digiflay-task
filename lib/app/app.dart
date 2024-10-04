@@ -27,8 +27,6 @@ class DigiFlayApp extends StatelessWidget {
         return BlocBuilder<GlobalCubit, GlobalState>(
           builder: (context, state) {
             return MaterialApp(
-              useInheritedMediaQuery: true,
-              //locale: DevicePreview.locale(context),
               builder: DevicePreview.appBuilder,
               debugShowCheckedModeBanner: false,
               localizationsDelegates: const [
@@ -41,16 +39,13 @@ class DigiFlayApp extends StatelessWidget {
                 Locale('ar', "EG"),
                 Locale('en', "US"),
               ],
-              locale: Locale(BlocProvider
-                  .of<GlobalCubit>(context)
-                  .langCode),
-              //locale: Locale('en'),
+              locale: Locale(BlocProvider.of<GlobalCubit>(context).langCode),
               title: AppStrings.digiFlayApp,
               theme: getAppTheme(),
               initialRoute:
-              sl<CacheHelper>().getData(key: ApiKeys.accessToken) == null
-                  ? Routes.intitlRoute
-                  : Routes.home,
+                  sl<CacheHelper>().getData(key: ApiKeys.accessToken) == null
+                      ? Routes.intitlRoute
+                      : Routes.home,
               onGenerateRoute: appRouter.generateRouter,
             );
           },
