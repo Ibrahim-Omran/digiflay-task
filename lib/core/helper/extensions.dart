@@ -1,6 +1,18 @@
+
 import 'package:flutter/cupertino.dart';
 
-extension Navigation on BuildContext {
+import 'package:flutter/material.dart';
+
+import '../utils/app_colors.dart';
+
+
+extension Context on BuildContext{
+
+ styleBold() {
+  return Theme.of(this).textTheme.displayMedium!.copyWith(
+    color: AppColors.black,
+  );
+}
 
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) {
     return Navigator.of(this).pushNamed(routeName, arguments: arguments);
@@ -19,3 +31,6 @@ extension Navigation on BuildContext {
 
   void pop()=> Navigator.of(this).pop();
 }
+
+
+

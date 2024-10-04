@@ -4,6 +4,7 @@
     "login": "تسجيل الدخول",
     "sign_up": "إنشاء حساب جديد",
     "loginSuccessfully": "تم تسجيل الدخول بنجاح",
+    "signUpSuccessfully": "تم إنشاء حساب بنجاح",
     "loginFailed": "حدث خطأ حاول مرة أخري",
     "email": "البريد الإلكتروني",
     "Username": "إسم المستخدم",
@@ -12,9 +13,11 @@
     "forgetPassword": "هل نسيت كلمة المرور ؟",
     "remember_me": "تذكرني",
     "don’t_have_an_account": "ليس لديك حساب ؟",
+    "or": "أو",
     "already_have_an_account": "لديك حساب بالفعل ؟",
     "continue_with_google": "سجل عن طريق جوجل",
     "search_here": "ابحث هنا ...",
+    "welcome": "مرحباً بك",
     "best_seller": "الأفضل مبيعاً",
     "view_all": "عرض الكل",
     "home": "الرئيسية",
@@ -23,10 +26,14 @@
     "please_enter_email": "من فضلك أدخل بريد الكتروني صالح",
     "please_enter_valid_password": "من فضلك أدخل كلمة سر صالحة",
     "please_enter_name": "من فضلك أدخل اسم صالح",
+    "introduce_your_self": "قدم نفسك",
     "profile": "الملف الشخصي",
     "Languages": "الللغات",
+    "contact_us": "تواصل معنا",
     "call_us": "اتصل بنا",
     "about_us": "من نحن",
     "sign_out": "تسجيل الخروج",
-    "edit_Account": "المعلومات الأساسية"
+    "edit_Account": "المعلومات الأساسية",
+    "Save": "حفظ"
+
 }

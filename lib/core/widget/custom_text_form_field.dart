@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/app_colors.dart';
 
 
@@ -23,9 +24,10 @@ class CustomTextFormField extends StatelessWidget {
     this.onChanged,
     this.colorCrsor,
     this.maxLines = 1,
-    this.expands = false,
+   this.expands = false,
     this.contentPadding,
     this.errorBorder,
+    this.label, this.icon, this.prefixIcon, this.suffixIcon,
   });
 
   final TextEditingController? controller;
@@ -46,6 +48,10 @@ class CustomTextFormField extends StatelessWidget {
   final Color? colorCrsor;
   final int? maxLines;
   final bool expands;
+  final Widget? label;
+  final Widget? icon;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final EdgeInsetsGeometry? contentPadding;
   final void Function(String)? onChanged;
 
@@ -64,17 +70,28 @@ class CustomTextFormField extends StatelessWidget {
           color: AppColors.black,
         ),
 
-        textDirection: TextDirection.rtl,
+
+        //textDirection: TextDirection.rtl,
         onChanged: onChanged,
         maxLines: maxLines,
         expands: expands,
 
+
+
         decoration: InputDecoration(
-          contentPadding: contentPadding,
-          hintText: hintText,
+          prefixIcon: prefixIcon,
+          label: label,
           labelText: labelText,
+
+          labelStyle: const TextStyle(
+            color: AppColors.grey,
+            fontSize: 20
+          ),
+          contentPadding: contentPadding,
+          icon: icon,
+          hintText: hintText,
           hintStyle: const TextStyle(
-            color: AppColors.black
+            color: AppColors.grey
           ),
 
           border: border,
@@ -86,13 +103,21 @@ class CustomTextFormField extends StatelessWidget {
           errorBorder: errorBorder,
 
 
-          suffixIcon: IconButton(
+          suffixIconConstraints: BoxConstraints(
+            minHeight: 60.h
+          ),
+
+          suffixIcon: suffixIcon ?? IconButton(
             onPressed: suffixIconOnPressed,
             icon: Icon(
               iconSuffix,
-              color: AppColors.black,
+              color: AppColors.greyVeryLite,
             ),
           ),
+
+
+
+
         ),
       );
   }
